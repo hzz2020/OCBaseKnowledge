@@ -19,6 +19,7 @@
 		A6CB89D625E3ADA000A7DA43 /* UIView+HzzTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB89D525E3ADA000A7DA43 /* UIView+HzzTest.m */; };
 		A6CB8A0F25E3FA9F00A7DA43 /* CustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB8A0E25E3FA9F00A7DA43 /* CustomObject.m */; };
 		A6CB8A1525E3FAB600A7DA43 /* CustomObject+HzzTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB8A1425E3FAB600A7DA43 /* CustomObject+HzzTest.m */; };
+		A6CB8A2825E40CEE00A7DA43 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB8A2725E40CEE00A7DA43 /* CustomView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,9 @@
 		A6CB8A0E25E3FA9F00A7DA43 /* CustomObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomObject.m; sourceTree = "<group>"; };
 		A6CB8A1325E3FAB600A7DA43 /* CustomObject+HzzTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CustomObject+HzzTest.h"; sourceTree = "<group>"; };
 		A6CB8A1425E3FAB600A7DA43 /* CustomObject+HzzTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CustomObject+HzzTest.m"; sourceTree = "<group>"; };
+		A6CB8A1925E409C700A7DA43 /* HzzTestDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HzzTestDelegate.h; sourceTree = "<group>"; };
+		A6CB8A2625E40CEE00A7DA43 /* CustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		A6CB8A2725E40CEE00A7DA43 /* CustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,9 @@
 		A6CB89CF25E3AC2200A7DA43 /* 代理Delegate */ = {
 			isa = PBXGroup;
 			children = (
+				A6CB8A1925E409C700A7DA43 /* HzzTestDelegate.h */,
+				A6CB8A2625E40CEE00A7DA43 /* CustomView.h */,
+				A6CB8A2725E40CEE00A7DA43 /* CustomView.m */,
 			);
 			path = "代理Delegate";
 			sourceTree = "<group>";
@@ -342,6 +349,7 @@
 				A6CB89D625E3ADA000A7DA43 /* UIView+HzzTest.m in Sources */,
 				A6CB8A1525E3FAB600A7DA43 /* CustomObject+HzzTest.m in Sources */,
 				A6CB899725E3ABB000A7DA43 /* AppDelegate.m in Sources */,
+				A6CB8A2825E40CEE00A7DA43 /* CustomView.m in Sources */,
 				A6CB89A825E3ABB200A7DA43 /* main.m in Sources */,
 				A6CB899A25E3ABB000A7DA43 /* SceneDelegate.m in Sources */,
 			);

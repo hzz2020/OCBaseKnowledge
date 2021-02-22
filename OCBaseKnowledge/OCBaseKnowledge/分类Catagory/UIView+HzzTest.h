@@ -19,7 +19,7 @@ typedef void(^ParamDefaultlock)(id object); // 有参数的block
 @property (nonatomic) CGFloat width;
 @property (nonatomic) CGFloat height;
 
-@property (nonatomic) NSInteger interval; ///点击事件间隔
+@property (nonatomic) NSInteger interval; ///点击事件间隔 防止连续点击
 
 /// 清除所有子视图
 - (void)removeAllSubViews;

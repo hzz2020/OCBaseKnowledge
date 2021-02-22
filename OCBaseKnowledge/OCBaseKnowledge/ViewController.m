@@ -7,10 +7,10 @@
 
 #import "ViewController.h"
 #import "UIView+HzzTest.h"
-//#import "CustomObject.h"
 #import "CustomObject+HzzTest.h"
+#import "CustomView.h"
 
-@interface ViewController ()
+@interface ViewController () <HzzTestDelegate>
 
 @end
 
@@ -19,7 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     
     UIView *view = [[UIView alloc] init];
     view.frame = CGRectMake(20, 80, 80, 80);
@@ -60,10 +59,24 @@
     NSLog(@"%@", obj.obj_copy);
     NSLog(@"%@", obj.obj_strong);
     
-    
     [obj eat];
     [obj drink];
+    
+    /* Delegate */
+    CustomView *cView = [[CustomView alloc] initWithFrame:CGRectMake(220, 220, 100, 100)];
+    cView.backgroundColor = [UIColor darkGrayColor];
+    cView.delegate = self;
+    [self.view addSubview:cView];
 }
+
+#pragma mark ---- HzzTestDelegate
+- (void)hello {
+    NSLog(@"12131312");
+}
+
+//- (void)print {
+//    NSLog(@"1111");
+//}
 
 
 @end
