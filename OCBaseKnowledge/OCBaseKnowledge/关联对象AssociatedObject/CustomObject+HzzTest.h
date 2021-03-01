@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) id obj_copy;
 @property (nonatomic, assign) id obj_assign;
 
+/// 在分类中 有与原类同名的方法
 - (void)eat;
 
 - (void)drink;

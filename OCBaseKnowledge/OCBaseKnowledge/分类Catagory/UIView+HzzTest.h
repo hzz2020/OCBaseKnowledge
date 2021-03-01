@@ -24,6 +24,8 @@ typedef void(^ParamDefaultlock)(id object); // 有参数的block
 /// 清除所有子视图
 - (void)removeAllSubViews;
 
++ (void)logTest;
+
 /// 增加点击事件
 - (void)addTouchBlock:(DefaultBlock)touchBlock;
 - (void)addTouchWithParaBlock:(ParamDefaultlock)touchBlock;

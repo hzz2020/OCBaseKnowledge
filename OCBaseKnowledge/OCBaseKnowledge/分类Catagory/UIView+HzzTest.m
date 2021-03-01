@@ -10,7 +10,7 @@
 
 @implementation UIView (HzzTest)
 
-/// runtime 方法混淆
+/// runtime  method swizzing方法混淆
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -63,7 +63,11 @@
     return interval;
 }
 
-///清除所有子视图
+
+/**
+ * 添加了实例方法
+ * 功能：清除所有子视图（还有例外处理）
+ */
 - (void)removeAllSubViews {
     for (UIView *view in self.subviews) {
         // 这里追加例外处理。飘过~
@@ -74,7 +78,7 @@
     }
 }
 
-///增加点击事件
+/// 增加点击事件
 - (void)addTouchBlock:(DefaultBlock)touchBlock {
     if (touchBlock) {
         objc_setAssociatedObject(self, @"kViewTouchBlock", touchBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
@@ -124,6 +128,14 @@
 
 - (NSDate *)getTouchTime {
     return objc_getAssociatedObject(self, @"kTouchTime");
+}
+
+/**
+ * 添加了类方法
+ */
+
++ (void)logTest {
+    NSLog(@"------");
 }
 
 @end

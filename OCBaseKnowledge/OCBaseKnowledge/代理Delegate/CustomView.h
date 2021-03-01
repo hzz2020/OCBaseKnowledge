@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<HzzTestDelegate> delegate;
 
+@property (nonatomic, strong) NSMutableArray *strongArray;
+@property (nonatomic, copy) NSMutableArray *acopyArray;
+
 @end
 
 NS_ASSUME_NONNULL_END

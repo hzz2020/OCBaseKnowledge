@@ -40,7 +40,7 @@
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
-// 重写父类方法一般使用继承、在分类中使用runtime的method swizzling来进行方法IMP的交换处理.
+// 父类方法一般使用继承、在分类中使用runtime的method swizzling来进行方法IMP的交换处理.
 - (void)eat{
     NSLog(@"分类中与原类方法重名的方法");
 }
