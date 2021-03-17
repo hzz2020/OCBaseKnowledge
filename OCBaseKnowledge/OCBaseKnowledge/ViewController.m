@@ -8,10 +8,11 @@
 #import "ViewController.h"
 #import "UIView+HzzTest.h"
 #import "CustomObject+HzzTest.h"
-#import "CustomView.h"
+#import "CrashCaseViewController.h"
+#import "DHLSelectView.h"
 
-@interface ViewController () <HzzTestDelegate>
-
+@interface ViewController () <DHLSelectViewDelegate>
+@property (nonatomic, strong) DHLSelectView *dhlSelectView;
 @property (nonatomic, strong) NSMutableArray *strongArray;
 @property (nonatomic, strong) NSMutableArray *acopyArray;
 
@@ -24,6 +25,8 @@
     // Do any additional setup after loading the view.
     
     [self sqCopyTest];
+    /* Delegate 代理 */
+    [self.view addSubview:self.dhlSelectView];
     
     UIView *view = [[UIView alloc] init];
     view.frame = CGRectMake(20, 80, 80, 80);
@@ -67,32 +70,28 @@
     [obj eat];
     [obj drink];
     
-    /* Delegate */
-    CustomView *cView = [[CustomView alloc] initWithFrame:CGRectMake(220, 220, 100, 100)];
-    cView.backgroundColor = [UIColor darkGrayColor];
-    cView.delegate = self;
-    [self.view addSubview:cView];
+    
     
     [UIView logTest];
 }
 
 /// 深浅copy
 - (void)sqCopyTest {
-    CustomView *vv = [[CustomView alloc] init];
-    vv.strongArray = self.strongArray;
-    vv.acopyArray = self.acopyArray;  /// 这里经过了一次copy，则根据copy规则 vv.acopyArray 成了不可变的。
-    
-    /// strong 有变均变
-    [self.strongArray addObject:@"4"];
-    [vv.strongArray addObject:@"6"];
-    /// strong修饰的变 copy修饰的不变
-    [self.acopyArray addObject:@"5"];
-//    [vv.acopyArray addObject:@"7"]; // Crash
-    
-    self.acopyArray = [vv.acopyArray copy]; /// [不可变 copy] 为浅copy，两者指向同一处不可变的
-//    [self.acopyArray addObject:@"000"]; /// Crash
-    self.acopyArray = @[@"aa",@"4444",@"333"].copy;
-    NSLog(@"");
+//    CustomView *vv = [[CustomView alloc] init];
+//    vv.strongArray = self.strongArray;
+//    vv.acopyArray = self.acopyArray;  /// 这里经过了一次copy，则根据copy规则 vv.acopyArray 成了不可变的。
+//    
+//    /// strong 有变均变
+//    [self.strongArray addObject:@"4"];
+//    [vv.strongArray addObject:@"6"];
+//    /// strong修饰的变 copy修饰的不变
+//    [self.acopyArray addObject:@"5"];
+////    [vv.acopyArray addObject:@"7"]; // Crash
+//    
+//    self.acopyArray = [vv.acopyArray copy]; /// [不可变 copy] 为浅copy，两者指向同一处不可变的
+////    [self.acopyArray addObject:@"000"]; /// Crash
+//    self.acopyArray = @[@"aa",@"4444",@"333"].copy;
+//    NSLog(@"");
 }
 
 #pragma mark ---- HzzTestDelegate
@@ -117,6 +116,28 @@
     }
     return _acopyArray;
 }
+
+- (DHLSelectView *)dhlSelectView {
+    if (!_dhlSelectView) {
+        _dhlSelectView = [[DHLSelectView alloc] initWithFrame:CGRectMake(20, 300, 200, 200)];
+        _dhlSelectView.backgroundColor = [UIColor purpleColor];
+        _dhlSelectView.delegate = self;
+    }
+    return _dhlSelectView;
+}
+
+#pragma mark - DHLSelectViewDelegate
+- (void)method1 {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+- (void)method2 {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+//- (void)method3 {
+//    NSLog(@"%s", __FUNCTION__);
+//}
 
 
 @end
