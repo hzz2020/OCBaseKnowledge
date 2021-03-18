@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A638DA7C26025D0300530E3F /* DHLSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = A638DA7B26025D0300530E3F /* DHLSelectView.m */; };
+		A6A691D42602ECF400635955 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A691D32602ECF400635955 /* Person.m */; };
+		A6A691E62602ED2B00635955 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A691E52602ED2B00635955 /* Dog.m */; };
 		A6BF7F6025F753F400D5A37A /* NSObject+SelectorCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7F5F25F753F400D5A37A /* NSObject+SelectorCrash.m */; };
 		A6CB899725E3ABB000A7DA43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB899625E3ABB000A7DA43 /* AppDelegate.m */; };
 		A6CB899D25E3ABB000A7DA43 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CB899C25E3ABB000A7DA43 /* ViewController.m */; };
@@ -43,6 +45,10 @@
 /* Begin PBXFileReference section */
 		A638DA7A26025D0300530E3F /* DHLSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHLSelectView.h; sourceTree = "<group>"; };
 		A638DA7B26025D0300530E3F /* DHLSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHLSelectView.m; sourceTree = "<group>"; };
+		A6A691D22602ECF400635955 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		A6A691D32602ECF400635955 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		A6A691E42602ED2B00635955 /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		A6A691E52602ED2B00635955 /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 		A6BF7F5E25F753F400D5A37A /* NSObject+SelectorCrash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SelectorCrash.h"; sourceTree = "<group>"; };
 		A6BF7F5F25F753F400D5A37A /* NSObject+SelectorCrash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SelectorCrash.m"; sourceTree = "<group>"; };
 		A6CB899225E3ABB000A7DA43 /* OCBaseKnowledge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCBaseKnowledge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +206,10 @@
 		A6CB89D125E3AC3E00A7DA43 /* KVC */ = {
 			isa = PBXGroup;
 			children = (
+				A6A691D22602ECF400635955 /* Person.h */,
+				A6A691D32602ECF400635955 /* Person.m */,
+				A6A691E42602ED2B00635955 /* Dog.h */,
+				A6A691E52602ED2B00635955 /* Dog.m */,
 			);
 			path = KVC;
 			sourceTree = "<group>";
@@ -348,7 +358,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6BF7F6025F753F400D5A37A /* NSObject+SelectorCrash.m in Sources */,
+				A6A691E62602ED2B00635955 /* Dog.m in Sources */,
 				A638DA7C26025D0300530E3F /* DHLSelectView.m in Sources */,
+				A6A691D42602ECF400635955 /* Person.m in Sources */,
 				A6CB899D25E3ABB000A7DA43 /* ViewController.m in Sources */,
 				A6CB8A0F25E3FA9F00A7DA43 /* CustomObject.m in Sources */,
 				A6CEE35C25F21BE00004EB1D /* CrashCaseViewController.m in Sources */,

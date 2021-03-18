@@ -10,6 +10,7 @@
 #import "CustomObject+HzzTest.h"
 #import "CrashCaseViewController.h"
 #import "DHLSelectView.h"
+#import "Person.h"
 
 @interface ViewController () <DHLSelectViewDelegate>
 @property (nonatomic, strong) DHLSelectView *dhlSelectView;
@@ -24,9 +25,53 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self sqCopyTest];
+    
+    
     /* Delegate 代理 */
     [self.view addSubview:self.dhlSelectView];
+    
+    [self sqCopyTest];
+    
+    
+    /******************* KVC ********************/
+    Person *person = [Person new];
+    /// setValue forKey
+    [person setValue:@(1) forKey:@"age"];
+    NSLog(@"%ld", (long)person->_age);
+    NSLog(@"%ld", (long)person->_isAge);
+    NSLog(@"%ld", (long)person->age);
+    NSLog(@"%ld", (long)person->isAge);
+    /// 触发KVO
+    [person addObserver:self
+             forKeyPath:@"age"
+                options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew
+                context:@"111"];
+    [person setValue:@(9) forKey:@"age"];
+    
+    [person setValue:@(6) forKey:@"age"];
+    
+    person->_age = 5;
+    person->_isAge = 2;
+    person->age = 3;
+    person->isAge = 4;
+    /// valueForKey
+    NSLog(@"age---%@", [person valueForKey:@"age"]);
+    
+    /// KVC嵌套使用
+    Dog *dog = [Dog new];
+    person.dog = dog;
+    [person setValue:@(2) forKeyPath:@"dog.age"];
+    NSLog(@"dog.age = %ld", (long)person.dog.age);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     UIView *view = [[UIView alloc] init];
     view.frame = CGRectMake(20, 80, 80, 80);
@@ -70,9 +115,18 @@
     [obj eat];
     [obj drink];
     
-    
-    
     [UIView logTest];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSKeyValueChangeKey,id> *)change
+                       context:(void *)context {
+    if (context == @"111") {
+        NSLog(@"%@-", object);
+        NSLog(@"%@--", keyPath);
+        NSLog(@"%@---", change);
+    }
 }
 
 /// 深浅copy
