@@ -33,7 +33,7 @@
     [self sqCopyTest];
     
     
-    /******************* KVC ********************/
+    /******************* KVC  start********************/
     Person *person = [Person new];
     /// setValue forKey
     [person setValue:@(1) forKey:@"age"];
@@ -63,7 +63,7 @@
     [person setValue:@(2) forKeyPath:@"dog.age"];
     NSLog(@"dog.age = %ld", (long)person.dog.age);
     
-    
+    /******************* KVC  end********************/
     
     
     
